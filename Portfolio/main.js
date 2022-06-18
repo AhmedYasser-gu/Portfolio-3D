@@ -67,13 +67,13 @@ scene.background = spaceTexture;
 
 const aTexture = new THREE.TextureLoader().load('PFP.png');
 
-const ahmed = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: aTexture }));
+const ahmed = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ map: aTexture }));
 
 scene.add(ahmed);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('space.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
 const moon = new THREE.Mesh(
