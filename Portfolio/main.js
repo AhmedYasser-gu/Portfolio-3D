@@ -22,18 +22,20 @@ renderer.render(scene, camera);
 // Torus
 
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
+const material = new THREE.MeshStandardMaterial({ color: 0xCEBD09});
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
 
+
+
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff);
+const pointLight = new THREE.PointLight(0xCEBD09);
 pointLight.position.set(5, 5, 5);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight, ambientLight);
+const ambientLight = new THREE.AmbientLight(0xCEBD09);
+scene.add(ambientLight);
 
 // Helpers
 
@@ -44,8 +46,8 @@ scene.add(pointLight, ambientLight);
 // const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
-  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const geometry = new THREE.SphereGeometry(0.10, 10, 10);
+  const material = new THREE.MeshStandardMaterial({ color: 0xFFFFFF });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
@@ -55,6 +57,7 @@ function addStar() {
   star.position.set(x, y, z);
   scene.add(star);
 }
+
 
 Array(200).fill().forEach(addStar);
 
@@ -67,14 +70,14 @@ scene.background = spaceTexture;
 
 const aTexture = new THREE.TextureLoader().load('PFP.png');
 
-const ahmed = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ map: aTexture }));
+const ahmed = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({ map: aTexture }));
 
 scene.add(ahmed);
 
 // Moon
 
 const moonTexture = new THREE.TextureLoader().load('space.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const normalTexture = new THREE.TextureLoader().load('earth.png');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -86,7 +89,7 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = 30;
+moon.position.z = 25;
 moon.position.setX(-10);
 
 ahmed.position.z = -5;
