@@ -29,7 +29,11 @@ const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
 
-
+// Testing other shapes
+const geometry2 = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
+const material2 = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+const torusKnot2 = new THREE.Mesh( geometry2, material2 );
+scene.add( torusKnot );
 
 // Lights
 
